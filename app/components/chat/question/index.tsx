@@ -3,6 +3,10 @@ import type { FC } from 'react'
 import React from 'react'
 import type { IChatItem } from '../type'
 import s from '../style.module.css'
+function classNames(...classes: any[]) {
+  return classes.filter(Boolean).join(' ')
+}
+
 
 import { Markdown } from '@/app/components/base/markdown'
 import ImageGallery from '@/app/components/base/image-gallery'
@@ -16,9 +20,9 @@ const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSr
   return (
     <div className='flex items-start justify-end' key={id}>
       <div>
-        <div className={`${s.question} relative text-sm text-gray-900`}>
+        <div className={`relative text-sm text-gray-900`}>
           <div
-            className={'mr-2 py-3 px-4 bg-blue-500 rounded-tl-2xl rounded-b-2xl'}
+            className={classNames('mr-2 py-3 px-4 bg-blue-500 rounded-tl-2xl rounded-b-2xl', s['question-origin'])}
           >
             {imgSrcs && imgSrcs.length > 0 && (
               <ImageGallery srcs={imgSrcs} />

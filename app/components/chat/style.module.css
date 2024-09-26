@@ -31,6 +31,10 @@
   width: 8px;
   height: 12px;
 }
+.question-origin {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 252 244 / var(--tw-bg-opacity));
+}
 
 .answer::before {
   left: 0;
@@ -78,7 +82,7 @@
 
 .sendBtn:hover {
   background-image: url(./icons/send-active.svg);
-  background-color: #ebf5ff;
+  background-color: #f2fcf4;
 }
 
 .textArea:focus + div .count {

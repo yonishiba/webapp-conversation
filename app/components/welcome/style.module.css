@@ -1,9 +1,18 @@
 .boxShodow {
-  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  box-shadow:
+    0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 }
 
 .bgGrayColor {
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
+}
+
+.bgGreenColor {
+  background-color: #04ccb1;
+}
+.bgGreenColor:hover {
+  background-color: #b4dabc;
 }
 
 .headerBg {
