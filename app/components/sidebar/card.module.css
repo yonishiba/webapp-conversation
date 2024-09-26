@@ -1,3 +1,10 @@
 .card:hover {
-  background: linear-gradient(0deg, rgba(235, 245, 255, 0.4), rgba(235, 245, 255, 0.4)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 245, 255, 0.4), rgba(235, 245, 255, 0.4)), #ffffff;
+}
+.color-origin {
+  color: #04ccb1;
+}
+.bg-origin {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 252 244 / var(--tw-bg-opacity));
 }
