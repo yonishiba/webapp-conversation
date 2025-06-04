@@ -15,7 +15,7 @@ import Toast from '@/app/components/base/toast'
 import ChatImageUploader from '@/app/components/base/image-uploader/chat-image-uploader'
 import ImageList from '@/app/components/base/image-uploader/image-list'
 import { useImageFiles } from '@/app/components/base/image-uploader/hooks'
-import AudioUploader from '@/app/components/base/audio-uploader/audio-uploader'
+import SpeechInput from '@/app/components/base/speech-recognition/speech-input'
 
 export type IChatProps = {
   chatList: ChatItem[]
@@ -174,14 +174,14 @@ const Chat: FC<IChatProps> = ({
               {/* 音声入力ボタン - visionConfigに関係なく表示 */}
               <div className='absolute bottom-2 left-2 flex items-center'>
                 {!visionConfig?.enabled && (
-                  <AudioUploader
+                  <SpeechInput
                     onTextReceived={setQuery}
                     disabled={isResponding}
                   />
                 )}
                 {visionConfig?.enabled && (
                   <div className='pl-[36px]'>
-                    <AudioUploader
+                    <SpeechInput
                       onTextReceived={setQuery}
                       disabled={isResponding}
                     />

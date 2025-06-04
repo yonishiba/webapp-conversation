@@ -28,11 +28,12 @@ const translation = {
     pasteImageLinkInvalid: '無効な画像リンクです',
     imageUpload: '画像アップロード',
   },
-  audioUploader: {
-    invalidFormat: 'サポートされていないファイル形式です。mp3, mp4, wav, webm形式のファイルをアップロードしてください。',
-    fileSizeLimit: 'ファイルサイズは{{size}}MB以下にしてください。',
-    uploadError: '音声ファイルのアップロード中にエラーが発生しました。',
-    noTextRecognized: '音声からテキストを認識できませんでした。',
+  speechInput: {
+    browserNotSupported: 'お使いのブラウザは音声認識をサポートしていません。',
+    recognitionError: '音声認識中にエラーが発生しました。',
+    startError: '音声認識の開始に失敗しました。',
+    listening: '聞いています...',
+    start: '音声入力を開始',
   },
 }
 

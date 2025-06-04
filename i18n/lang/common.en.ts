@@ -28,11 +28,12 @@ const translation = {
     pasteImageLinkInvalid: 'Invalid image link',
     imageUpload: 'Image Upload',
   },
-  audioUploader: {
-    invalidFormat: 'Unsupported file format. Please upload mp3, mp4, wav, or webm files.',
-    fileSizeLimit: 'File size must not exceed {{size}} MB.',
-    uploadError: 'An error occurred while uploading the audio file.',
-    noTextRecognized: 'No text could be recognized from the audio.',
+  speechInput: {
+    browserNotSupported: 'Your browser does not support speech recognition.',
+    recognitionError: 'An error occurred during speech recognition.',
+    startError: 'Failed to start speech recognition.',
+    listening: 'Listening...',
+    start: 'Start voice input',
   },
 }
 
