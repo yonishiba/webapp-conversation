@@ -28,6 +28,12 @@ const translation = {
     pasteImageLinkInvalid: '無効な画像リンクです',
     imageUpload: '画像アップロード',
   },
+  audioUploader: {
+    invalidFormat: 'サポートされていないファイル形式です。mp3, mp4, wav, webm形式のファイルをアップロードしてください。',
+    fileSizeLimit: 'ファイルサイズは{{size}}MB以下にしてください。',
+    uploadError: '音声ファイルのアップロード中にエラーが発生しました。',
+    noTextRecognized: '音声からテキストを認識できませんでした。',
+  },
 }
 
 export default translation

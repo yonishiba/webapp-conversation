@@ -15,6 +15,7 @@ import Toast from '@/app/components/base/toast'
 import ChatImageUploader from '@/app/components/base/image-uploader/chat-image-uploader'
 import ImageList from '@/app/components/base/image-uploader/image-list'
 import { useImageFiles } from '@/app/components/base/image-uploader/hooks'
+import AudioUploader from '@/app/components/base/audio-uploader/audio-uploader'
 
 export type IChatProps = {
   chatList: ChatItem[]
@@ -155,6 +156,10 @@ const Chat: FC<IChatProps> = ({
                         settings={visionConfig}
                         onUpload={onUpload}
                         disabled={files.length >= visionConfig.number_limits}
+                      />
+                      <AudioUploader
+                        onTextReceived={setQuery}
+                        disabled={isResponding}
                       />
                       <div className='mx-1 w-[1px] h-4 bg-black/5' />
                     </div>
