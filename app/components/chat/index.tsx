@@ -148,37 +148,50 @@ const Chat: FC<IChatProps> = ({
         !isHideSendInput && (
           <div className={cn(!feedbackDisabled && '!left-3.5 !right-3.5', 'absolute z-10 bottom-0 left-0 right-0')}>
             <div className='p-[5.5px] max-h-[150px] bg-white border-[1.5px] border-gray-200 rounded-xl overflow-y-auto'>
-              {
-                visionConfig?.enabled && (
-                  <>
-                    <div className='absolute bottom-2 left-2 flex items-center'>
-                      <ChatImageUploader
-                        settings={visionConfig}
-                        onUpload={onUpload}
-                        disabled={files.length >= visionConfig.number_limits}
-                      />
-                      <AudioUploader
-                        onTextReceived={setQuery}
-                        disabled={isResponding}
-                      />
-                      <div className='mx-1 w-[1px] h-4 bg-black/5' />
-                    </div>
-                    <div className='pl-[52px]'>
-                      <ImageList
-                        list={files}
-                        onRemove={onRemove}
-                        onReUpload={onReUpload}
-                        onImageLinkLoadSuccess={onImageLinkLoadSuccess}
-                        onImageLinkLoadError={onImageLinkLoadError}
-                      />
-                    </div>
-                  </>
-                )
-              }
+              {/* 画像アップロード機能 */}
+              {visionConfig?.enabled && (
+                <>
+                  <div className='absolute bottom-2 left-2 flex items-center'>
+                    <ChatImageUploader
+                      settings={visionConfig}
+                      onUpload={onUpload}
+                      disabled={files.length >= visionConfig.number_limits}
+                    />
+                    <div className='mx-1 w-[1px] h-4 bg-black/5' />
+                  </div>
+                  <div className='pl-[52px]'>
+                    <ImageList
+                      list={files}
+                      onRemove={onRemove}
+                      onReUpload={onReUpload}
+                      onImageLinkLoadSuccess={onImageLinkLoadSuccess}
+                      onImageLinkLoadError={onImageLinkLoadError}
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* 音声入力ボタン - visionConfigに関係なく表示 */}
+              <div className='absolute bottom-2 left-2 flex items-center'>
+                {!visionConfig?.enabled && (
+                  <AudioUploader
+                    onTextReceived={setQuery}
+                    disabled={isResponding}
+                  />
+                )}
+                {visionConfig?.enabled && (
+                  <div className='pl-[36px]'>
+                    <AudioUploader
+                      onTextReceived={setQuery}
+                      disabled={isResponding}
+                    />
+                  </div>
+                )}
+              </div>
               <Textarea
                 className={`
                   block w-full px-2 pr-[118px] py-[7px] leading-5 max-h-none text-sm text-gray-700 outline-none appearance-none resize-none
-                  ${visionConfig?.enabled && 'pl-12'}
+                  pl-12
                 `}
                 value={query}
                 onChange={handleContentChange}
