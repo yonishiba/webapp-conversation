@@ -35,7 +35,8 @@ export const sendChatMessage = async (
   return ssePost('chat-messages', {
     body: {
       ...body,
-      response_mode: 'streaming',
+      response_mode: 'blocking',
+      // response_mode: 'streaming',
     },
   }, { onData, onCompleted, onThought, onFile, onError, getAbortController, onMessageEnd, onMessageReplace, onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished })
 }
